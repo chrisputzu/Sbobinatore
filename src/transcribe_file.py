@@ -20,7 +20,7 @@ def transcribe_audio_live(uploaded_file):
         temp_file.write(uploaded_file.read())
         temp_file_path = temp_file.name
 
-    model = WhisperModel("large", device="cpu")
+    model = WhisperModel("base", device="cpu")
     
     segments, _ = model.transcribe(temp_file_path)
     for segment in segments:
